@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navidad Artesanal | 500 Recetas de Repostería para Emprender y Celebrar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Paleta de Colores y Variables */
+        :root {
+            --color-beige: #F5F5DC;
+            --color-verde: #006400; /* Verde Abeto */
+            --color-rojo: #B22222; /* Rojo Ladrillo Opaco */
+            --color-dorado-acento: #FFD700; /* Dorado para acentos festivos */
+            --color-texto-oscuro: #333333;
+            --color-texto-claro: #FFFFFF;
+            --font-principal: 'Playfair Display', serif;
+            --font-secundaria: 'Lora', serif;
+            --font-emprendedor: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos Generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-secundaria);
+            color: var(--color-texto-oscuro);
+            line-height: 1.6;
+            background-color: var(--color-beige);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            font-family: var(--font-principal);
+            font-size: 3rem;
+            color: var(--color-verde);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '✨';
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: -20px;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            width: fit-content;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-rojo);
+            color: var(--color-texto-claro);
+            font-family: var(--font-emprendedor);
+            font-weight: 700;
+            font-size: 1.3rem;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--color-dorado-acento);
+        }
+
+        .cta-button:hover {
+            background-color: #CD5C5C; /* Tonalidad más clara del rojo */
+            transform: translateY(-3px);
+        }
+
+        /* 1. Hero / Portada */
+        #hero {
+            /* Si falla la imagen, usa un color sólido para el fondo: */
+            background-color: var(--color-verde); /* Fondo verde abeto sólido */
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-texto-claro);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 800px;
+        }
+        
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 3px solid var(--color-dorado-acento);
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-principal);
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-family: var(--font-secundaria);
+            font-size: 1.6rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .slogan {
+            color: var(--color-dorado-acento);
+            font-style: italic;
+        }
+
+        /* 2. Beneficios */
+        #beneficios {
+            padding: 80px 0;
+            background-color: var(--color-beige);
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .beneficio-item {
+            background-color: var(--color-texto-claro);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--color-rojo);
+        }
+
+        .beneficio-item h3 {
+            color: var(--color-verde);
+            font-family: var(--font-emprendedor);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .beneficio-item h3 span {
+            margin-left: 10px;
+        }
+
+        /* 3. Producto y Bonus */
+        #producto {
+            padding: 80px 0;
+            background-color: #F0F0E0;
+            text-align: center;
+        }
+        
+        .producto-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .producto-main-card {
+            background-color: var(--color-texto-claro);
+            border: 3px solid var(--color-verde);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 450px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .producto-main-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .producto-main-card h3 {
+            font-family: var(--font-principal);
+            font-size: 2.5rem;
+            color: var(--color-rojo);
+            margin-bottom: 10px;
+        }
+
+        .producto-main-card .precio {
+            font-size: 3rem;
+            color: var(--color-verde);
+            font-family: var(--font-emprendedor);
+            font-weight: 700;
+            margin: 20px 0 30px;
+            display: block;
+        }
+
+        .bonus-section {
+            max-width: 650px;
+            text-align: left;
+        }
+        
+        .bonus-section h3 {
+            font-family: var(--font-emprendedor);
+            font-size: 2rem;
+            color: var(--color-rojo);
+            margin-bottom: 25px;
+        }
+        
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .bonus-item {
+            background-color: var(--color-texto-claro);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px dashed var(--color-verde);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .bonus-item h4 {
+            font-family: var(--font-emprendedor);
+            color: var(--color-verde);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .bonus-item img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        /* 4. Testimonios */
+        #testimonios {
+            background-color: var(--color-verde);
+            padding: 80px 0;
+            color: var(--color-texto-claro);
+        }
+
+        #testimonios h2 {
+            color: var(--color-beige);
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            /* Estilo para tarjetas de texto en testimonios */
+            text-align: center;
+        }
+
+        .testimonio-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--color-rojo);
+            font-style: italic;
+        }
+        
+        .testimonio-card p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .testimonio-card .autor {
+            display: block;
+            font-weight: 600;
+            font-style: normal;
+            color: var(--color-dorado-acento);
+        }
+
+        /* 5. FAQ */
+        #faq {
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #D7CCC8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-pregunta {
+            font-family: var(--font-emprendedor);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-rojo);
+            cursor: pointer;
+            padding: 15px 20px;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-respuesta {
+            padding: 15px 20px;
+            display: none;
+            background-color: var(--color-texto-claro);
+            font-size: 1rem;
+        }
+
+        .faq-pregunta::after {
+            content: '➕';
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-pregunta.active::after {
+            content: '➖';
+        }
+
+        /* 6. CTA Final */
+        #cta-final {
+            background-color: var(--color-rojo);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--color-texto-claro);
+        }
+
+        #cta-final h2 {
+            color: var(--color-texto-claro);
+            font-family: var(--font-emprendedor);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        #cta-final h2::after {
+            content: '🎁';
+            color: var(--color-dorado-acento);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: var(--color-texto-oscuro);
+            background-color: var(--color-beige);
+            border-top: 1px solid #D7CCC8;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="hero">
+        <div class="hero-content">
+            <h1>¡El Kit de Repostería Navideña que combina Pasión con Ingresos! 💰</h1>
+            <p>Descubre el e-book con 500 Recetas Exclusivas y la Guía de Emprendimiento para brillar en casa o montar tu negocio.</p>
+            <p class="slogan">Navidad Artesanal presenta: *Magia en cada receta* 🌟</p>
+            <a href="http://hotm.art/Io3fPZAY" class="cta-button" target="_blank">¡Quiero Emprender y Celebrar por solo U$s 9,90!</a>
+        </div>
+    </header>
+
+    <hr>
+
+    <section id="beneficios" class="container">
+        <h2>🎄 ¿Por Qué Este E-book es Tu Mejor Inversión?</h2>
+        <div class="beneficios-grid">
+            <div class="beneficio-item">
+                <h3>👩‍🍳 Cocina con Confianza</h3>
+                <p><strong>Paso a paso detallado:</strong> Recetas claras, ideales para principiantes, que garantizan resultados profesionales y el agrado de toda tu familia.</p>
+            </div>
+            <div class="beneficio-item">
+                <h3>💡 Recetas Clásicas e Innovadoras</h3>
+                <p>Un repertorio que satisface todos los paladares: desde el tradicional pan de jengibre hasta postres modernos. ¡Diversión para grandes y chicos!</p>
+            </div>
+            <div class="beneficio-item">
+                <h3>⏱️ Ahorra Tiempo Valioso</h3>
+                <p>Diseñado para maximizar tu tiempo en la cocina. Recetas optimizadas para que disfrutes más de las fiestas y dediques menos horas a la preparación.</p>
+            </div>
+            <div class="beneficio-item">
+                <h3>🚀 ¡Emprende desde Casa!</h3>
+                <p>Recibe consejos profesionales para costear, fijar precios y conquistar clientes con tu repostería. Ideal como negocio principal o un lucrativo hobbie.</p>
+            </div>
+            <div class="beneficio-item">
+                <h3>🎁 El Regalo Perfecto</h3>
+                <p>Regálate a ti misma la herramienta para ser la anfitriona estrella o sorprende a esa amiga especial que ama la repostería y los negocios.</p>
+            </div>
+            <div class="beneficio-item">
+                <h3>👯‍♀️ Para Emprender en Grupo</h3>
+                <p>Comparte la experiencia y las recetas con tus amigas. ¡Una excelente oportunidad para iniciar un proyecto navideño en equipo!</p>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="producto" class="container">
+        <h2>📚 Tu Éxito Navideño Incluye Todo Esto</h2>
+        
+        <div class="producto-flex">
+            <div class="producto-main-card">
+                <alt="Portada E-book 500 Recetas de Repostería Navideña>
+                <h3>E-book: 500 Recetas de Repostería Navideña Exclusivas</h3>
+                <p>La colección definitiva de platillos hogareños con un toque de elegancia. Recetas dulces y saladas, pensadas para que cualquier mujer pueda brillar en la cena navideña sin complicaciones.</p>
+                <span class="precio">Solo por Hoy: U$s 9,90</span>
+                <p>¡Incluye 4 BONUS DE REGALO por tiempo limitado!</p>
+                <a href="http://hotm.art/Io3fPZAY" class="cta-button" target="_blank">SÍ, QUIERO MI E-BOOK + 4 REGALOS</a>
+            </div>
+
+            <div class="bonus-section">
+                <h3>Recibe 4 Bonus de Regalo 🎁 (Valorados en U$s 50)</h3>
+                <div class="bonus-grid">
+                    
+                    <div class="bonus-item">
+                        <h4>⭐ Bonus 1: Actividades Navideñas para Chicos</h4>
+                        <alt="Actividades Navideñas para Chicos>
+                    </div>
+                    
+                    <div class="bonus-item">
+                        <h4>⭐ Bonus 2: 84 Recetas de Aperitivos y Entradas Navideños</h4>
+                        <alt="84 Recetas de Aperitivos y Entradas Navideños>
+                    </div>
+
+                    <div class="bonus-item">
+                        <h4>⭐ Bonus 3: Guía de Organización para Celebraciones</h4>
+                        <alt="Guía de Organización para Celebraciones Navideñas>
+                    </div>
+
+                    <div class="bonus-item">
+                        <h4>⭐ Bonus 4: Grupo de Acompañamiento con Especialistas</h4>
+                        <alt="Grupo de Acompañamiento con Especialistas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="testimonios">
+        <div class="container">
+            <h2>📢 Lo que Dicen Nuestras Emprendedoras y Anfitrionas</h2>
+            <div class="testimonios-grid">
+                
+                <div class="testimonio-card">
+                    <p>"Este e-book fue la clave para mi negocio. Los tips de costeo me ayudaron a duplicar mis ganancias la temporada pasada. Ya no es solo un hobbie, ¡es una empresa rentable y mis postres son los más pedidos!"</p>
+                    <span class="autor">— María J., 45 años. Emprendedora exitosa.</span>
+                </div>
+                
+                <div class="testimonio-card">
+                    <p>"Soy principiante, pero siguiendo el paso a paso, hice postres que parecían hechos por un chef. Mi familia estuvo fascinada y no sentí el estrés de otros años. ¡La Navidad se sintió mágica y fácil!"</p>
+                    <span class="autor">— Carolina E., 38 años. Anfitriona estrella.</span>
+                </div>
+                
+                <div class="testimonio-card">
+                    <p>"El grupo de acompañamiento y los bonus extra valen oro. Es una experiencia completa, no solo un recetario. Pude innovar en mis ventas y tener más tiempo libre. ¡La mejor inversión!"</p>
+                    <span class="autor">— Laura V., 50 años. Cocinera y empresaria.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="faq" class="container">
+        <h2>❓ Aclaremos tus Dudas Rápidamente</h2>
+        <div class="faq-list">
+            
+            <div class="faq-item">
+                <div class="faq-pregunta">¿El e-book es apto para principiantes?</div>
+                <div class="faq-respuesta">Absolutamente. Todas las recetas están explicadas paso a paso, con un lenguaje sencillo y consejos de cocina que harán que cualquier principiante logre resultados profesionales.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-pregunta">¿Cuáles son las ventajas del e-book?</div>
+                <div class="faq-respuesta">La gran ventaja de este recetario es que es una experiencia completa con consejos profesionales y trucos que funcionan al 100% para la anfitriona y la emprendedora.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-pregunta">¿Cómo recibo el e-book después de comprarlo?</div>
+                <div class="faq-respuesta">La descarga es automática e inmediata. Una vez completado el pago, recibirás un enlace de descarga directa en tu correo electrónico. Es un archivo PDF, compatible con todos tus dispositivos (móvil, tablet, PC).</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-pregunta">¿Tiene vencimiento o un tiempo de uso?</div>
+                <div class="faq-respuesta">El acceso es de por vida, lo que significa que podrás disfrutar de las deliciosas recetas navideñas en cualquier momento, ¡ahora y en futuras celebraciones y temporadas de venta!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-pregunta">¿El pago es seguro?</div>
+                <div class="faq-respuesta">Totalmente. Nuestros programas se encuentran respaldados en tecnología, soporte y seguridad por **HOTMART**, la compañía de productos digitales más grande de habla hispana. Ellos aseguran tu pago y tu dinero por 7 días, en caso de querer un reembolso.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-pregunta">¿Cuáles son los métodos de pago aceptados?</div>
+                <div class="faq-respuesta">Aceptamos diversos métodos para tu comodidad: **Tarjeta de Débito, Tarjeta de Crédito, Mercado Pago** (según región) y PayPal. (Los métodos exactos pueden variar según tu país).</div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="cta-final">
+        <div class="container">
+            <h2>¡Última Oportunidad! Empieza a planificar tus Festejos, Generar Ingresos y Magia en tu cocina Hoy Mismo 🎄</h2>
+            <p>Asegura tu acceso al E-book de 500 Recetas + 4 BONUS DE REGALO antes de que la oferta termine.</p>
+            <a href="http://hotm.art/Io3fPZAY" class="cta-button" target="_blank">DESCARGA INMEDIATA: U$s 9,90</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Navidad Artesanal. Todos los derechos reservados. | **Magia en cada receta**</p>
+        <p><a href="#" style="color: var(--color-texto-oscuro);">Términos de Uso</a> | <a href="#" style="color: var(--color-texto-oscuro);">Política de Reembolso (7 días Hotmart)</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const preguntas = document.querySelectorAll('.faq-pregunta');
+            
+            preguntas.forEach(pregunta => {
+                pregunta.addEventListener('click', () => {
+                    const respuesta = pregunta.nextElementSibling;
+                    const isActive = pregunta.classList.contains('active');
+
+                    // Cierra todas las respuestas abiertas
+                    document.querySelectorAll('.faq-pregunta').forEach(p => {
+                        p.classList.remove('active');
+                        p.nextElementSibling.style.display = 'none';
+                    });
+
+                    // Abre la respuesta actual si no estaba activa
+                    if (!isActive) {
+                        pregunta.classList.add('active');
+                        respuesta.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
