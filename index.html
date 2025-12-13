@@ -256,6 +256,42 @@
             border-radius: 6px;
         }
 
+        .indice-section {
+            max-width: 650px;
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .indice-section h3 {
+            font-family: var(--font-emprendedor);
+            font-size: 2rem;
+            color: var(--color-rojo);
+            margin-bottom: 25px;
+        }
+
+        .indice-grid {
+           display: grid;
+           grid-template-columns: repeat(2, 1fr);
+           gap: 20px;
+        }
+
+        .indice-item {
+           background-color: var(--color-texto-claro);
+           padding: 15px;
+           border-radius: 10px;
+           border: 1px dashed var(--color-rojo);
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .indice-item h4 {
+           font-family: var(--font-emprendedor);
+           color: var(--color-verde);
+           font-size: 1.05rem;
+           margin: 0;
+           display: flex;
+           align-items: center;
+         }
+
         /* 4. Testimonios */
         #testimonios {
             background-color: var(--color-verde);
@@ -373,9 +409,9 @@
     <header id="hero">
         <div class="hero-content">
             <h1>¡El Kit de Repostería Navideña que combina Pasión con Ingresos! 💰</h1>
-            <p>Descubre el e-book con 500 Recetas Exclusivas y la Guía de Emprendimiento para brillar en casa o montar tu negocio.</p>
+            <p>Descubre el E-book con 500 Recetas Exclusivas y la Guía de Emprendimiento para brillar en casa o montar tu negocio.</p>
             <p class="slogan">Navidad Artesanal presenta: *Magia en cada receta* 🌟</p>
-            <a href="http://hotm.art/Io3fPZAY" class="cta-button" target="_blank">¡Quiero Emprender y Celebrar por solo U$s 9,90!</a>
+            <a href="http://hotm.art/Io3fPZAY" class="cta-button" target="_blank">¡¡Quiero el E-book!!</a>
         </div>
     </header>
 
@@ -397,16 +433,12 @@
                 <p>Diseñado para maximizar tu tiempo en la cocina. Recetas optimizadas para que disfrutes más de las fiestas y dediques menos horas a la preparación.</p>
             </div>
             <div class="beneficio-item">
-                <h3>🚀 ¡Emprende desde Casa!</h3>
-                <p>Recibe consejos profesionales para costear, fijar precios y conquistar clientes con tu repostería. Ideal como negocio principal o un lucrativo hobbie.</p>
-            </div>
-            <div class="beneficio-item">
                 <h3>🎁 El Regalo Perfecto</h3>
-                <p>Regálate a ti misma la herramienta para ser la anfitriona estrella o sorprende a esa amiga especial que ama la repostería y los negocios.</p>
+                <p>Regálate a ti misma la herramienta para ser la anfitriona estrella o sorprende a esa amiga especial que ama la repostería y las Fiestas.</p>
             </div>
             <div class="beneficio-item">
-                <h3>👯‍♀️ Para Emprender en Grupo</h3>
-                <p>Comparte la experiencia y las recetas con tus amigas. ¡Una excelente oportunidad para iniciar un proyecto navideño en equipo!</p>
+                <h3>👯‍♀️ Para Emprender uno mismo o en Grupo</h3>
+                <p>Conquista clientes con tu repostería. Ideal como negocio principal o un lucrativo hobbie. Comparte la experiencia y las recetas con tus amigas. ¡Una excelente oportunidad para iniciar un proyecto navideño en equipo!</p>
             </div>
         </div>
     </section>
@@ -418,10 +450,9 @@
         
         <div class="producto-flex">
             <div class="producto-main-card">
-                <alt="Portada E-book 500 Recetas de Repostería Navideña>
                 <h3>E-book: 500 Recetas de Repostería Navideña Exclusivas</h3>
                 <p>La colección definitiva de Recetas dulces, pensadas para que cualquier familia pueda disfrutar en la temporada navideña sin complicaciones.</p>
-                <span class="precio">Solo por Hoy: U$s 9,90</span>
+                <span class="precio">Aprovechá el precio promocional! menos de $17.000,- (ARS)</span>
                 <p>¡Incluye GRATIS 4 BONUS DE REGALO por tiempo limitado!</p>
                 <a href="http://hotm.art/Io3fPZAY" class="cta-button" target="_blank">SÍ, QUIERO MI E-BOOK + 4 REGALOS</a>
             </div>
@@ -448,6 +479,19 @@
                     <div class="bonus-item">
                         <h4>⭐ Bonus 4: Grupo de Acompañamiento con Especialistas</h4>
                     
+                    </div>
+                </div>
+            </div>
+
+            <div class="indice-ebook"">
+                <h3>¿Qué grupos de recetas vas a encontrar?</h3>
+                 <div class="lista-recetas">
+                     <h4>🍪 Galletas Festivas...</h4>
+                     <h4>🎄 Pasteles y Tartas...</h4>
+                     <h4>🍫 Postres de Chocolate...</h4>
+                     <h4>🥜 Panes y Panettones...</h4>
+                     <h4>🎁 Bebidas Calientes...</h4>
+                     <h4>✨ Decoración Creativa...</h4>
                     </div>
                 </div>
             </div>
@@ -486,7 +530,7 @@
         <div class="faq-list">
             
             <div class="faq-item">
-                <div class="faq-pregunta">¿El e-book es apto para principiantes?</div>
+                <div class="faq-pregunta">¿El E-book es apto para principiantes?</div>
                 <div class="faq-respuesta">Absolutamente. Todas las recetas están explicadas paso a paso, con un lenguaje sencillo y consejos de cocina que harán que cualquier principiante logre resultados profesionales.</div>
             </div>
             
@@ -523,7 +567,7 @@
         <div class="container">
             <h2>¡Última Oportunidad! Empieza a planificar tus Festejos, Generar Ingresos y Magia en tu cocina Hoy Mismo 🎄</h2>
             <p>Asegura tu acceso al E-book de 500 Recetas + GRATIS 4 BONUS DE REGALO antes de que la oferta termine.</p>
-            <a href="http://hotm.art/Io3fPZAY" class="cta-button" target="_blank">DESCARGA INMEDIATA: U$s 9,90</a>
+            <a href="http://hotm.art/Io3fPZAY" class="cta-button" target="_blank">DESCARGA INMEDIATA: menos de $ 17.000,- (ARS)</a>
         </div>
     </section>
 
@@ -558,4 +602,5 @@
     </script>
 </body>
 </html>
+
 
